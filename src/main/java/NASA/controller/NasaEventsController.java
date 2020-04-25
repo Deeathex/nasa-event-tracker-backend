@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "nasa-natural-event-tracker")
 public class NasaEventsController {
     private static final Logger LOG = LogManager.getLogger(NasaEventsController.class.getName());
 
