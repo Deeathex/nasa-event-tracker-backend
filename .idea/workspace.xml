@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc9ef4b6-c64f-4028-8f9c-1f4e0c84be98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NASA/configurations/MyConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NASA/configurations/WebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/NASA/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/NASA/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/NASA/controller/NasaEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/NASA/controller/NasaEventsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NASA/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NASA/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NASA/controller/NasaEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NASA/controller/NasaEventsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/Tot/UBB/SDI/Semestrul_2/WSMT/Teme/T1_5Probleme/Programe/Java/WSMT_1_5Programe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -101,12 +97,31 @@
       <workItem from="1587124820998" duration="88000" />
       <workItem from="1587477213392" duration="3444000" />
       <workItem from="1587751260766" duration="4265000" />
-      <workItem from="1587818642920" duration="7896000" />
+      <workItem from="1587818642920" duration="7941000" />
+      <workItem from="1587897926704" duration="3806000" />
+      <workItem from="1588169767270" duration="61000" />
+      <workItem from="1588175357811" duration="3804000" />
+      <workItem from="1588334105001" duration="2378000" />
+      <workItem from="1588347143539" duration="624000" />
+      <workItem from="1588534569024" duration="52000" />
+      <workItem from="1588757445232" duration="5858000" />
     </task>
+    <task id="LOCAL-00001" summary="Enabled cors origin.">
+      <created>1587833434633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587833434634</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Enabled cors origin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enabled cors origin." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1586982060867">
@@ -125,38 +140,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="224" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1586980977295" />
-    <state width="1877" height="461" key="GridCell.Tab.0.bottom" timestamp="1587830662301">
+    <state x="394" y="115" key="CommitChangelistDialog2" timestamp="1587833432864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.0.center" timestamp="1587830662301">
+    <state x="394" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587833432864" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1588175557890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.0.left" timestamp="1587830662301">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588175557890" />
+    <state width="1877" height="296" key="GridCell.Tab.0.bottom" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.0.right" timestamp="1587830662301">
+    <state width="1877" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.0.center" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.1.bottom" timestamp="1587830662302">
+    <state width="1877" height="296" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.0.left" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662302" />
-    <state width="1877" height="461" key="GridCell.Tab.1.center" timestamp="1587830662301">
+    <state width="1877" height="296" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.0.right" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.1.left" timestamp="1587830662301">
+    <state width="1877" height="296" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.1.bottom" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662301" />
-    <state width="1877" height="461" key="GridCell.Tab.1.right" timestamp="1587830662302">
+    <state width="1877" height="296" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.1.center" timestamp="1587966296732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="461" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587830662302" />
+    <state width="1877" height="296" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.1.left" timestamp="1587966296732">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="296" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
+    <state width="1877" height="296" key="GridCell.Tab.1.right" timestamp="1587966296732">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="296" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587966296732" />
     <state width="1877" height="355" key="GridCell.Tab.2.bottom" timestamp="1587755528507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,6 +200,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586982093384" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1587833437015">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587833437015" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1586980288004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -185,20 +212,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="879" y="440" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1586981881272" />
+    <state x="342" y="133" key="new project wizard" timestamp="1588175588198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="133" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1588175588198" />
     <state x="666" y="140" key="refactoring.ChangeSignatureDialog" timestamp="1587478392648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="140" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587478392648" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/NASA/service/APIConsumer.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
