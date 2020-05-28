@@ -67,7 +67,7 @@ public class APIConsumer {
         return getEventsByAffectedPlacesNumber(events, affectedPlacesNo);
     }
 
-    private List<Event> getAllEventsWithStatus(EventStatus status) {
+    public List<Event> getAllEventsWithStatus(EventStatus status) {
         Map<QueryParameterType, String> queryParams = new HashMap<>();
         queryParams.put(QueryParameterType.status, status.toString());
 
@@ -99,7 +99,7 @@ public class APIConsumer {
         if (EventStatus.all.equals(status)) {
             events.addAll(getAllEventsInRangeWithStatus(EventStatus.open, days));
             events.addAll(getAllEventsInRangeWithStatus(EventStatus.closed, days));
-            return events;
+            return getEventsByAffectedPlacesNumber(events, affectedPlacesNo);
         }
 
         events = getAllEventsInRangeWithStatus(status, days);
@@ -143,15 +143,39 @@ public class APIConsumer {
         return categories;
     }
 
-    /***
-     *
-     * @param categoryId the id of the category from which to retrieve the events
-     * @return the list of events within the provided category
-     */
-    public List<Event> getAllEventsFromCategory(int categoryId, long affectedPlacesNo) {
-        String json = getNasaJsonResponse(URL_BASE_CATEGORIES + SLASH + categoryId);
+    public List<Event> getAllEventsFromCategory(int categoryId, EventStatus status, long priorDays, long affectedPlacesNo) {
+        String additionalQueries = "";
+        if (priorDays != 0) {
+            additionalQueries += "&days=" + priorDays;
+        }
 
+        String json;
         List<Event> events = new ArrayList<>();
+        if (EventStatus.all.equals(status)) {
+            json = getNasaJsonResponse(URL_BASE_CATEGORIES + SLASH + categoryId + "?status=" + EventStatus.open + additionalQueries);
+
+            try {
+                events = getEventsFromJson(json);
+            } catch (JsonProcessingException e) {
+                LOG.error("Error parsing events json " + e.getMessage());
+            } catch (ParseException e) {
+                LOG.error("Error parsing date from json " + e.getMessage());
+            }
+
+            json = getNasaJsonResponse(URL_BASE_CATEGORIES + SLASH + categoryId + "?status=" + EventStatus.closed + additionalQueries);
+
+            try {
+                events.addAll(getEventsFromJson(json));
+            } catch (JsonProcessingException e) {
+                LOG.error("Error parsing events json " + e.getMessage());
+            } catch (ParseException e) {
+                LOG.error("Error parsing date from json " + e.getMessage());
+            }
+            return getEventsByAffectedPlacesNumber(events, affectedPlacesNo);
+        }
+
+        json = getNasaJsonResponse(URL_BASE_CATEGORIES + SLASH + categoryId + "?status=" + status + additionalQueries);
+
         try {
             events = getEventsFromJson(json);
         } catch (JsonProcessingException e) {
@@ -221,7 +245,7 @@ public class APIConsumer {
         for (int i = 0; i < events.size(); i++) {
             List<Geometry> geometries = events.get(i).getGeometries();
             if (geometries != null) {
-                if (geometries.size() != affectedPlacesNo) {
+                if (geometries.size() < affectedPlacesNo) {
                     events.remove(i);
                     i--;
                 }

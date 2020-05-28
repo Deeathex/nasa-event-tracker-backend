@@ -27,4 +27,11 @@ dependencies {
     // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+
+    // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
+    compile group: 'io.projectreactor', name: 'reactor-core', version: '3.3.5.RELEASE'
+    // https://mvnrepository.com/artifact/io.projectreactor/reactor-test
+    testCompile group: 'io.projectreactor', name: 'reactor-test', version: '3.3.5.RELEASE'
+
+
 }
