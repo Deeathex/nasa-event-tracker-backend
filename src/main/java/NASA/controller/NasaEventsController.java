@@ -23,19 +23,16 @@ public class NasaEventsController {
         this.service = service;
     }
 
-    @GetMapping("/events")
-    public ResponseEntity<?> getAllEvents(@RequestParam EventStatus status, @RequestParam long priorDays, @RequestParam long affectedPlacesNo) {
-        LOG.info("User requests " + status + " events within " + priorDays + " days and with number of affected places equals to: " + affectedPlacesNo);
-        if (priorDays == 0) {
-            return new ResponseEntity<>(service.getAllEvents(status, affectedPlacesNo), HttpStatus.OK);
-        }
-        return new ResponseEntity<>(service.getAllEvents(status, priorDays, affectedPlacesNo), HttpStatus.OK);
-    }
-
     @GetMapping("/categories")
     public ResponseEntity<?> getAllCategories() {
         LOG.info("User requests all categories.");
         return new ResponseEntity<>(service.getAllCategories(), HttpStatus.OK);
+    }
+
+    @GetMapping("/events")
+    public ResponseEntity<?> getAllEvents(@RequestParam EventStatus status, @RequestParam long priorDays, @RequestParam long affectedPlacesNo) {
+        LOG.info("User requests " + status + " events within " + priorDays + " days and with number of affected places equals to: " + affectedPlacesNo);
+        return new ResponseEntity<>(service.getAllEvents(status, priorDays, affectedPlacesNo), HttpStatus.OK);
     }
 
     @GetMapping("/categories/{category-id}/events")
@@ -50,8 +47,22 @@ public class NasaEventsController {
     }
 
     @GetMapping(value = "/stream/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Event> getEventsStream() {
-        EventsGenerator eventsGenerator = new EventsGenerator(service.getAllCategories(), service.getAllEventsWithStatus(EventStatus.open));
+    public Flux<Event> getEventsStream(@RequestParam EventStatus status, @RequestParam long priorDays, @RequestParam long affectedPlacesNo) {
+        LOG.info("User requests a flux with " + status + " events within " + priorDays + " days and with number of affected places equals to: " + affectedPlacesNo);
+        EventsGenerator eventsGenerator = new EventsGenerator(service.getAllCategories(), service.getAllEvents(status, priorDays, affectedPlacesNo));
+        return eventsGenerator.getEvents();
+    }
+
+    @GetMapping(value = "/stream/categories/{category-id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Event> getEventsStream(@PathVariable("category-id") int categoryId,
+                                       @RequestParam EventStatus status,
+                                       @RequestParam long priorDays,
+                                       @RequestParam long affectedPlacesNo) {
+        LOG.info("User requests a flux with all events within category with id " + categoryId
+                + ", with number of affected places equals to: " + affectedPlacesNo
+                + ", with prior days: " + priorDays + " and status: " + status);
+
+        EventsGenerator eventsGenerator = new EventsGenerator(service.getAllCategories(), service.getAllEventsFromCategory(categoryId, status, priorDays, affectedPlacesNo));
         return eventsGenerator.getEvents();
     }
 }

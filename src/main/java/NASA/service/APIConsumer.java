@@ -12,6 +12,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -94,6 +96,10 @@ public class APIConsumer {
      * (including today) from which events will be returned
      */
     public List<Event> getAllEvents(EventStatus status, long days, long affectedPlacesNo) {
+        if (days == 0) {
+            return getAllEvents(status, affectedPlacesNo);
+        }
+
         List<Event> events = new ArrayList<>();
 
         if (EventStatus.all.equals(status)) {

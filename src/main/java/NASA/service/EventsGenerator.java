@@ -52,20 +52,20 @@ public class EventsGenerator {
     }
 
     public Flux<Event> getEvents() {
-        Flux<Event> greetingFlux = Flux.fromStream(Stream.generate(() -> {
+        Flux<Event> eventFlux = Flux.fromStream(Stream.generate(() -> {
             Event event = new Event();
             if (!events.isEmpty()) {
                 event = events.remove(events.size() - 1);
-                Date currentDateTime = new Date(System.currentTimeMillis());
-                for (Geometry geometry : event.getGeometries()) {
-                    geometry.setDate(currentDateTime);
-                }
+//                Date currentDateTime = new Date(System.currentTimeMillis());
+//                for (Geometry geometry : event.getGeometries()) {
+//                    geometry.setDate(currentDateTime);
+//                }
             } else {
                 events = eventsBackup;
             }
             return event;
         }));
         Flux<Long> durationFlux = Flux.interval(Duration.ofMillis(500));
-        return Flux.zip(greetingFlux, durationFlux).map(Tuple2::getT1);
+        return Flux.zip(eventFlux, durationFlux).map(Tuple2::getT1);
     }
 }
